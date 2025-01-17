@@ -1,17 +1,10 @@
-Feature: User Authentication tests
+Feature: User Login and Navigate
 
-  Background:
-    Given User navigates to the application
-    And User click on the login link
+  Scenario: User logs in and navigates
+    Given the user navigates to the Spendflo login page
+    When the user logs in with email "rishi@spendfloone.com" and password "Test@12345"
+    And skips the "Skip for now" button if it appears
+    And handles the Pendo popup if it appears
+    And selects the "SpendfloOne" organization if necessary
+    Then the user should be on the Spendflo homepage
 
-  Scenario: Login should be success
-    And User enter the username as "ortoni11"
-    And User enter the password as "Pass1234"
-    When User click on the login button
-    Then Login should be success
-
-  Scenario: Login should not be success
-    Given User enter the username as "koushik"
-    Given User enter the password as "Passkoushik"
-    When User click on the login button
-    But Login should fail

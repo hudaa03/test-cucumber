@@ -28,7 +28,7 @@ module.exports = {
         formatOptions: {
             snippetInterface: "async-await"
         },
-        publishQuiet: true,
+
         dryRun: false,
         require: [
             "src/test/steps/*.ts",
@@ -43,6 +43,7 @@ module.exports = {
             "json:test-results/cucumber-report.json",
             "rerun:@rerun.txt"
         ],
-        parallel: 2
+        parallel: 2,
+        //module.exports = { default: '--publish-quiet' }   
     }
 }
